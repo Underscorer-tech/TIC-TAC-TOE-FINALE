@@ -11,6 +11,7 @@ var winner = null;
 var r1 = null;
 var b1;
 var cross, tie;
+var openslots = 0;
 
 function preload() {
 
@@ -305,7 +306,7 @@ function checkWinner() {
         }
     }
 
-    var openslots = 0; 
+   
     console.log(openslots)
    
     for (var i = 0; i < 3; i++) {
