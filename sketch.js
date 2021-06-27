@@ -11,7 +11,7 @@ var winner = null;
 var r1 = null;
 var b1;
 var cross, tie;
-var openslots = 0;
+
 
 function preload() {
 
@@ -31,15 +31,6 @@ function setup() {
 
 function draw() {
 
-    if (gameState == 4) {
-        push();
-        fill(rgb(random(0, 255), random(0, 255), random(0, 255)))
-        textFont("fantasy")
-        textSize(25);
-        text("It is a tie", width / 3, 200);
-        image(tie, width / 3, 250)
-        pop()
-    }
     if (gameState == 6) {
 
         background(0);
@@ -303,12 +294,21 @@ function checkWinner() {
             noFill();
             ellipse(370, 460, 50, 50)
             pop();
+        }else if (gameState == 4 && winner == null){
+                push();
+        fill(rgb(random(0, 255), random(0, 255), random(0, 255)))
+        textFont("fantasy")
+        textSize(25);
+        text("It is a tie", width / 3, 200);
+        image(tie, width / 3, 250)
+        pop()
+        
         }
     }
 
    
     console.log(openslots)
-   
+   var openslots = 0;
     for (var i = 0; i < 3; i++) {
         for (var j = 0; j < 3; j++) {
 
